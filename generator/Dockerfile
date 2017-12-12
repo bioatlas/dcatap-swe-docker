@@ -11,6 +11,4 @@ RUN npm install -g grunt-cli
 WORKDIR /catalog-generator
 
 EXPOSE 4000
-
 CMD jekyll
-
