@@ -10,6 +10,22 @@ This tool is listed as one of the reference implementations in this slightly dat
 
 It also wraps and bundles a tool from <https://bitbucket.org/metasolutions/dcat-editor.git> - a DCAT-AP editor adapted for Sweden - created by Metasolutions.
 
+## Requirements
+
+Install `git`, `make`, `docker` and `docker-compose`. Then, for name resolution to work, make your system aware of the `dnsmasq` name resolver that will be launched by docker and is defined in the `docker-compose.yml` file. 
+
+On Linux this can be done by editing `/etc/resolvconf/resolv.conf.d/head`, adding this line:
+
+		nameserver 172.17.0.1
+
+Then restart `resolvconf` using this command:
+
+		sudo systemctl restart resolvconf.service
+
+For variations of how to do this on MacOS and other platforms, please search the Internet.
+
+For setting up SSL, see instructions at <https://github.com/dina-web/proxy-docker/tree/self-signed-certs#certificates-and-setting-up-ssl>
+
 ## Usage
 
 Issue the following command provided you have `make`, `git`, `docker` and `docker-compose`:
