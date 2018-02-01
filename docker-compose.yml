@@ -17,6 +17,8 @@ services:
     links:
       - proxy:dcateditor.bioatlas.se
       - proxy:dcatgenerator.bioatlas.se
+      - proxy:dcatvalidator.bioatlas.se
+      - proxy:ckan.bioatlas.se
 
   proxy:
     image: jwilder/nginx-proxy:alpine
@@ -39,6 +41,11 @@ services:
       - VIRTUAL_HOST=dcateditor.bioatlas.se
       - VIRTUAL_PORT=4000
 
+  validator:
+    image: bioatlas/dcatapvalidator:latest
+    environment:
+      - VIRTUAL_HOST=dcatvalidator.bioatlas.se
+
   ckan:
     image: bioatlas/ckan
     environment:
@@ -57,9 +64,10 @@ services:
     image: ckan/postgresql
   
   solr:
-    image: daf-ckan-solr:1.0.0
+    image: ckan/solr
+# https://github.com/italia/dati-ckan-docker/tree/master/solr
+#    image: daf-ckan-solr:1.0.0
 	
   redis:
     image: redis:latest
-
 

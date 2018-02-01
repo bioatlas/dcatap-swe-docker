@@ -5,7 +5,7 @@ all: build up browse
 build:
 	make -C generator
 	make -C editor
-	make -C dkan
+	make -C ckan
 	make -C validator
 
 up:
