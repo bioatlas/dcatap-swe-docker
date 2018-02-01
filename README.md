@@ -53,3 +53,7 @@ If needed modify these files to adapt the field-to-term mappings etc:
 
 This tool should be upgraded to support the next version of the schema.
 
+## Links
+
+- Crosswalk w field mappings versus Project Open Data, CKAN, Schema.org <https://project-open-data.cio.gov/v1.1/metadata-resources/>
+
