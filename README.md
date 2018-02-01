@@ -1,14 +1,24 @@
 # Swedish DCAT-AP generator
 
-This experimental project provides a minimal set of containers that can be used to generate (with the intent to publish on the Internet) DCAT-AP resources using for example .json or .xml formats. 
+This experimental project provides a minimal set of containers with tools that can be used to automate workflows involving DCAT-AP resources in Sweden (with the intent to publish on the Internet). A list with some of the relevant tools is available at <https://oppnadata.se/dcat-ap-metadataspecifikation/>, including for example:
 
-It wraps and bundles a tool from <https://github.com/project-open-data/catalog-generator> - a DCAT-AP generator which takes CSV input and generates a valid resource that can be exposed at a FQDN on the format `agency.gov/data`
+- CKAN <https://github.com/ckan/ckan>
+- Datatank <https://github.com/tdt/> 
+- GeoNetworks <https://github.com/geonetwork> 
+- EntryScape <https://bitbucket.org/account/user/metasolutions/projects/ESC> 
+- OpenDataSoft <https://github.com/opendatasoft>
+- <https://github.com/Wikimedia-Sverige/DCAT>
+- <https://github.com/SEMICeu/dcat-ap_validator>
+
+The project is work in progress - not all tools are included yet - and a few tools are included which may later be removed as it is not clear whether they are actively maintained/supported or relevant for use within Sweden with the Swedish DCAT-AP v 1.1 standard. For example:
+
+A tool from <https://github.com/project-open-data/catalog-generator> - a DCAT-AP generator which takes CSV input and generates a valid resource that can be exposed at a FQDN on the format `agency.gov/data`
 
 This tool is listed as one of the reference implementations in this slightly dated DCAT-AP implementation guide from here:
 
 <https://lists.w3.org/Archives/Public/public-dwbp-wg/2015Jul/att-0010/DCAT-APimplementationguide.pdf>
 
-It also wraps and bundles a tool from <https://bitbucket.org/metasolutions/dcat-editor.git> - a DCAT-AP editor adapted for Sweden - created by Metasolutions.
+It also wraps and bundles a tool from <https://bitbucket.org/metasolutions/dcat-editor.git> - a DCAT-AP editor adapted for Sweden - created by Metasolutions. It is deprecated and will likely be removed from here.
 
 ## Requirements
 

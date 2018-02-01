@@ -39,3 +39,27 @@ services:
       - VIRTUAL_HOST=dcateditor.bioatlas.se
       - VIRTUAL_PORT=4000
 
+  ckan:
+    image: bioatlas/ckan
+    environment:
+      - VIRTUAL_HOST=ckan.bioatlas.se
+      - VIRTUAL_PORT=5000
+      - CKAN_SITE_URL=https://ckan.bioatlas.se
+      - DB_PORT_5432_TCP_ADDR=db
+      - SOLR_PORT_8983_TCP_ADDR=solr
+      - REDIS_PORT_6379_TCP_ADDR=redis
+    depends_on:
+      - db
+      - solr
+      - redis
+
+  db:
+    image: ckan/postgresql
+  
+  solr:
+    image: daf-ckan-solr:1.0.0
+	
+  redis:
+    image: redis:latest
+
+
