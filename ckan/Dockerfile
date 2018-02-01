@@ -14,3 +14,8 @@ RUN ckan-pip install -e $CKAN_HOME/src/ckanext-dcat/ && \
 RUN mkdir -p $CKAN_HOME/src/ckanext-dcatapit/
 ADD ./ckanext-dcatapit/ $CKAN_HOME/src/ckanext-dcatapit/
 RUN ckan-pip install -e $CKAN_HOME/src/ckanext-dcatapit/
+
+# Install also ckanext-spatial
+RUN ckan-pip install -e git+https://github.com/ckan/ckanext-spatial.git@stable#egg=ckanext-spatial
+
+

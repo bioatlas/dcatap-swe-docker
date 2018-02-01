@@ -19,8 +19,7 @@ init:
 	mkdir -p ckanext-dcatapit && cp -r dati-ckan-docker/ckan/ckanext-dcatapit/* ckanext-dcatapit/
 
 build:
-	@docker build -t bioatlas/ckan \
-		--build-arg CKAN_SITE_URL=https://ckan.bioatlas.se .
+	@docker build -t bioatlas/ckan .
 
 clean:
-	@rm -rf ckan a
+	@rm -rf dati-ckan-docker ckanext-harvest ckanext-dcat ckanext-dcatapit
