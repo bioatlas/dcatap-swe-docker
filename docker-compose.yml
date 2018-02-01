@@ -41,10 +41,10 @@ services:
       - VIRTUAL_HOST=dcateditor.bioatlas.se
       - VIRTUAL_PORT=4000
 
-  validator:
-    image: bioatlas/dcatapvalidator:latest
-    environment:
-      - VIRTUAL_HOST=dcatvalidator.bioatlas.se
+#  validator:
+#    image: bioatlas/dcatapvalidator:latest
+#    environment:
+#      - VIRTUAL_HOST=dcatvalidator.bioatlas.se
 
   ckan:
     image: bioatlas/ckan
