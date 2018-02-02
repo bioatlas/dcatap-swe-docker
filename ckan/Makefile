@@ -20,7 +20,8 @@ init:
 
 build:
 #	@docker build -t bioatlas/ckan .
-	cd dati-ckan-docker && ./build-local.sh
+	cd dati-ckan-docker && docker build -t daf-ckan-solr:1.0.0 ./solr
+	cd dati-ckan-docker && docker build -t daf-ckan:1.0.0 ./ckan
 
 clean:
 	@rm -rf dati-ckan-docker ckanext-harvest ckanext-dcat ckanext-dcatapit

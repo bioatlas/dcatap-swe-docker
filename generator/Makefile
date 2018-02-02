@@ -11,7 +11,7 @@ all: init build
 
 init:
 	@echo "Caching files required for the build..."
-	@test -d catalog-generator || git clone --depth=1 $(URL_TOOL)
+	@test -d catalog-generator || git clone -b gh-pages --depth=1 $(URL_TOOL)
 	cd catalog-generator && cp ../_config.yml ../schema.yml .
 
 build:

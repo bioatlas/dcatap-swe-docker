@@ -24,7 +24,7 @@
     "bower_components"
   ],
   "resolutions": {
-    "jquery": "3.2.1",
+    "jquery": ">=3.2.1",
     "dojo": "1.12.2",
     "dijit": "1.12.2"
   }
