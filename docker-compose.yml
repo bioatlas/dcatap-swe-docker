@@ -28,17 +28,17 @@ services:
       - /var/run/docker.sock:/tmp/docker.sock:ro
       - ./certs:/etc/nginx/certs
 
-  generator:
-    image: bioatlas/dcatapgenerator:latest
-    environment:
-      - VIRTUAL_HOST=dcatgenerator.bioatlas.se
-      - VIRTUAL_PORT=4000
+#  generator:
+#    image: bioatlas/dcatapgenerator:latest
+#    environment:
+#      - VIRTUAL_HOST=dcatgenerator.bioatlas.se
+#      - VIRTUAL_PORT=4000
 
-  editor:
-    image: bioatlas/dcatapeditor:latest
-    environment:
-      - VIRTUAL_HOST=dcateditor.bioatlas.se
-      - VIRTUAL_PORT=4000
+#  editor:
+#    image: bioatlas/dcatapeditor:latest
+#    environment:
+#      - VIRTUAL_HOST=dcateditor.bioatlas.se
+#      - VIRTUAL_PORT=4000
 
 #  validator:
 #    image: bioatlas/dcatapvalidator:latest
@@ -52,6 +52,8 @@ services:
       - solr
       - redis
     environment:
+      - VIRTUAL_HOST=ckan.bioatlas.se
+      - VIRTUAL_PORT=5000
       - CKAN_SITE_URL=https://ckan.bioatlas.se
       - DB_ENV_POSTGRES_USER=ckan
       - DB_ENV_POSTGRES_PASSWORD=ckan
@@ -62,8 +64,6 @@ services:
       - SOLR_PORT_8983_TCP_PORT=8983
       - REDIS_PORT_6379_TCP_ADDR=redis
       - REDIS_PORT_6379_TCP_PORT=6379
-      - VIRTUAL_HOST=ckan.bioatlas.se
-      - VIRTUAL_PORT=5000
     depends_on:
       - db
       - solr

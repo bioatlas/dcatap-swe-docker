@@ -6,9 +6,9 @@ init:
 	docker-compose run ckan ./ckan-init.sh
 
 build:
-	make -C generator
-	make -C editor
 	make -C ckan
+#	make -C generator
+#	make -C editor
 #	make -C validator
 
 up:
@@ -18,13 +18,14 @@ down:
 	docker-compose down
 
 browse:
+	echo "Do you have SSL certs in the ./certs dir?"
+	firefox https://ckan.bioatlas.se &
 #	firefox dcatgenerator.bioatlas.se &
 #	firefox dcateditor.bioatlas.se &
 #	firefox dcatvalidator.bioatlas.se &
-	firefox ckan.bioatlas.se &
 
 harvest:
-	firefox ckan.bioatlas.se/harvest &
+	firefox https://ckan.bioatlas.se/harvest &
 
 harvest-cmd:
 	docker-compose run ckan bash -c ". /usr/lib/ckan/default/bin/activate && paster --plugin=ckanext-harvest harvester gather_consumer  --config /etc/ckan/default/ckan.ini && paster --plugin=ckanext-harvest harvester fetch_consumer --config /etc/ckan/default/ckan.ini"
