@@ -19,7 +19,8 @@ init:
 	mkdir -p ckanext-dcatapit && cp -r dati-ckan-docker/ckan/ckanext-dcatapit/* ckanext-dcatapit/
 
 build:
-	@docker build -t bioatlas/ckan .
+#	@docker build -t bioatlas/ckan .
+	cd dati-ckan-docker && ./build-local.sh
 
 clean:
 	@rm -rf dati-ckan-docker ckanext-harvest ckanext-dcat ckanext-dcatapit
