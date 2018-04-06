@@ -1,5 +1,7 @@
 # Swedish DCAT-AP generator
 
+_*UPDATE*_ please do not use the "editor" mentioned below - it is deprecated and doesn't work - see instead if this repo fits your use case: <https://github.com/riksantikvarieambetet/soch-dcat-ap>
+
 This experimental project provides a minimal set of containers with tools that can be used to automate workflows involving DCAT-AP resources in Sweden (with the intent to publish on the Internet). 
 
 A list with some of the relevant tools is available at <https://oppnadata.se/dcat-ap-metadataspecifikation/>, including for example:
